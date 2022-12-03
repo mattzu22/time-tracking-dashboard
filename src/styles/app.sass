@@ -1,0 +1,12 @@
+@use './variables'
+@use './mixins'
+
+html
+    font-size: 62.5% 
+
+body
+    background-color: variables.$bg-primary   
+    color: variables.$color-fonts
+    min-height: 100vh
+    font-size: 1.6rem
+    @include mixins.center
