@@ -4,7 +4,7 @@ import Work from "../../images/icon-work.svg";
 
 export const Card = () => {
   return (
-    <>
+    <div className="container-card">
       <div className="illustration-top">
         <img src={Work} alt="Work" />
       </div>
@@ -22,6 +22,6 @@ export const Card = () => {
           <p>Last Week - 5hrs</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };

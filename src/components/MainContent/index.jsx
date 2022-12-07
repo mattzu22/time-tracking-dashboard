@@ -1,11 +1,11 @@
 import { AsideInfo } from "../AsideInfo"
-import { Card } from "../Card"
+import { Cards } from "../Cards"
 import './style.sass'
 
 export const MainContent = () =>(
     <main className="dashboard">
         <AsideInfo />
-        <Card />
+        <Cards />
     </main>
 )
 
