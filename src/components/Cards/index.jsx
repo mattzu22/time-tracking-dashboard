@@ -6,16 +6,22 @@ import play from "../../images/icon-play.svg";
 import self from "../../images/icon-self-care.svg";
 import social from "../../images/icon-social.svg";
 import study from "../../images/icon-study.svg";
+import { useContext, useEffect, useState } from "react";
+import { DataContext } from "../../context/dataContext";
 
 export const Cards = () => {
+  const { activities } = useContext(DataContext);
+
   return (
-    <div className="cards" >
-      <Card img={work} id='work' />
-      <Card img={play} id='play' />
-      <Card img={study} id='study' />
-      <Card img={exercise} id='exercise' />
-      <Card img={social} id='social' />
-      <Card img={self} id='self' />
+    <div className="cards">
+      {activities.map((activity) => (
+        <Card
+          img={work}
+          id={activity.title}
+          timeCurrent={activity.timeframes.daily.current}
+          timePrevious={activity.timeframes.daily.previous}
+        />
+      ))}
     </div>
   );
 };

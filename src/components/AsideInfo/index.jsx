@@ -5,16 +5,22 @@ import api from '../../../data.json'
 
 export const AsideInfo = () =>{
 
-    // const [day, setDay] = useState({
-    //     daily: '',
-    //     current: '',
-    //     previous: ''
-        
-    // })
+    const [day, setDay] = useState({
+        daily: '',
+        current: '',
+        previous: ''   
+    })
 
-    // const fetchData = ()=>{
-    //     setDay({})
-    // }
+    const fetchData = () =>{
+        api.map(element =>{
+            setDay({
+                daily: element.title,
+                current: element.timeframes.daily.current,
+                previous: element.timeframes.daily.previous
+            })
+            
+        })
+    }
   
     return(
         <aside className="about-me">
@@ -25,7 +31,7 @@ export const AsideInfo = () =>{
         </div>
         
         <div className="navegation">
-            <a>Daily</a>
+            <a onClick={fetchData}>Daily</a>
             <a>Weekly</a>
             <a>Monhtly</a>
         </div>
