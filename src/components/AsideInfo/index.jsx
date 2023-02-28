@@ -1,27 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import Avatar from '../../images/image-jeremy.png'
 import './style.sass'
 import api from '../../../data.json'
+import { DataContext } from '../../context/dataContext'
 
 export const AsideInfo = () =>{
-
-    const [day, setDay] = useState({
-        daily: '',
-        current: '',
-        previous: ''   
-    })
-
-    const fetchData = () =>{
-        api.map(element =>{
-            setDay({
-                daily: element.title,
-                current: element.timeframes.daily.current,
-                previous: element.timeframes.daily.previous
-            })
-            
-        })
-    }
-  
+    const { setFiltered } = useContext(DataContext);
+    
     return(
         <aside className="about-me">
         <div className="info">
@@ -31,9 +16,9 @@ export const AsideInfo = () =>{
         </div>
         
         <div className="navegation">
-            <a onClick={fetchData}>Daily</a>
-            <a>Weekly</a>
-            <a>Monhtly</a>
+            <a onClick={() => setFiltered('daily')}>Daily</a>
+            <a onClick={() => setFiltered('weekly')}>Weekly</a>
+            <a onClick={() => setFiltered('monthly')}>Monhtly</a>
         </div>
     </aside>
     )

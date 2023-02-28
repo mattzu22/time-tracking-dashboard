@@ -8,6 +8,8 @@ export default function ContextWrapper({ children }) {
   useEffect(() =>{
     setActivities(api)
   }, [])
+
+  
   return (
     <DataContext.Provider value={{ activities, filtered, setFiltered }}>
       {children}

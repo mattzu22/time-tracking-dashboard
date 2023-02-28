@@ -14,12 +14,10 @@ export const Cards = () => {
 
   return (
     <div className="cards">
-      {activities.map((activity) => (
+      {activities.map((activity, index) => (
         <Card
-          img={work}
-          id={activity.title}
-          timeCurrent={activity.timeframes.daily.current}
-          timePrevious={activity.timeframes.daily.previous}
+          key={index}
+          activity={activity}
         />
       ))}
     </div>
