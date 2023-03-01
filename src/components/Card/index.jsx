@@ -5,7 +5,6 @@ import { DataContext } from "../../context/dataContext";
 import work from '../../images/icon-work.svg';
 
 export const Card = ({ activity }) => {
-  console.log(activity.img);
 
   const [previous, setPrevious] = useState("");
   const [current, setCurrent] = useState("");
