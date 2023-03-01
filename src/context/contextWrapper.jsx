@@ -4,6 +4,7 @@ import api from "../../data.json";
 
 export default function ContextWrapper({ children }) {
   const [activities, setActivities] = useState([]);
+
   const [filtered, setFiltered] = useState('daily');
   useEffect(() =>{
     setActivities(api)

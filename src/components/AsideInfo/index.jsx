@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react'
 import Avatar from '../../images/image-jeremy.png'
 import './style.sass'
-import api from '../../../data.json'
 import { DataContext } from '../../context/dataContext'
 
 export const AsideInfo = () =>{

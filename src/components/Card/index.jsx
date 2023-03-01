@@ -2,9 +2,10 @@ import "./style.sass";
 import Ellipsis from "../../images/icon-ellipsis.svg";
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../context/dataContext";
-import work from "../../images/icon-work.svg";
+import work from '../../images/icon-work.svg';
 
 export const Card = ({ activity }) => {
+  console.log(activity.img);
 
   const [previous, setPrevious] = useState("");
   const [current, setCurrent] = useState("");
@@ -26,8 +27,8 @@ export const Card = ({ activity }) => {
 
   return (
     <div className="container-card">
-      <div className="illustration-top" id={activity.title}>
-        <img src={work} alt={activity.title} />
+      <div className="illustration-top" style={{background: activity.color}} id={activity.title}>
+        <img src={activity.img} alt={activity.title} />
       </div>
       <div className="card">
         <div className="type">

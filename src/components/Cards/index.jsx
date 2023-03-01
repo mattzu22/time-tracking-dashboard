@@ -6,7 +6,7 @@ import play from "../../images/icon-play.svg";
 import self from "../../images/icon-self-care.svg";
 import social from "../../images/icon-social.svg";
 import study from "../../images/icon-study.svg";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { DataContext } from "../../context/dataContext";
 
 export const Cards = () => {
@@ -19,7 +19,7 @@ export const Cards = () => {
           key={index}
           activity={activity}
         />
-      ))}
+    ))}
     </div>
   );
 };
