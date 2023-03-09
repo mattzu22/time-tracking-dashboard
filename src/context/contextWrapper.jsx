@@ -1,14 +1,25 @@
 import { DataContext } from "./dataContext";
 import { useEffect, useState } from "react";
-import api from "../../data.json";
 
 export default function ContextWrapper({ children }) {
   const [activities, setActivities] = useState([]);
 
   const [filtered, setFiltered] = useState('daily');
-  useEffect(() =>{
-    setActivities(api)
-  }, [])
+
+    const fetchData = async () => {
+    const url = 'https://api-vercel-ivory.vercel.app/api'
+    const resposta = await fetch(url)
+    const json = await resposta.json()
+
+    setActivities(
+      json
+    )
+  };
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
 
   
   return (

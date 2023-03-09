@@ -2,7 +2,6 @@ import "./style.sass";
 import Ellipsis from "../../images/icon-ellipsis.svg";
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../context/dataContext";
-import work from '../../images/icon-work.svg';
 
 export const Card = ({ activity }) => {
 
