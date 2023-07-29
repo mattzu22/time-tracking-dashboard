@@ -1,5 +1,5 @@
 import "./style.sass";
-import Ellipsis from "../../images/icon-ellipsis.svg";
+import Ellipsis from "../../../public/images/icon-ellipsis.svg";
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../context/dataContext";
 
@@ -10,7 +10,10 @@ export const Card = ({ activity }) => {
 
   const { filtered } = useContext(DataContext);
 
+
   useEffect(() => {
+
+    console.log(JSON.stringify(filtered));
     if (filtered === "daily") {
       setPrevious(activity.timeframes.daily.previous);
       setCurrent(activity.timeframes.daily.current);

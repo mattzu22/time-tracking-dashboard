@@ -9,6 +9,7 @@ export const MainContent = () => {
       <main className="dashboard">
         <AsideInfo />
         <Cards />
+
       </main>
     </ContextWrapper>
   );
